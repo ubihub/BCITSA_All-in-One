@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+h1 {
+    border-bottom: 3px solid #cc9900;
+    color: #996600;
+    font-size: 30px;
+}
+.myButton {
+	-moz-box-shadow: 0px 0px 0px 2px #9fb4f2;
+	-webkit-box-shadow: 0px 0px 0px 2px #9fb4f2;
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7892c2), color-stop(1, #476e9e));
+	background:-moz-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-webkit-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-o-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:-ms-linear-gradient(top, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7892c2', endColorstr='#476e9e',GradientType=0);
+	background-color:#7892c2;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:100%;
+	padding:0px 0px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
+	background:-moz-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-webkit-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-o-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:-ms-linear-gradient(top, #476e9e 5%, #7892c2 100%);
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#476e9e', endColorstr='#7892c2',GradientType=0);
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+a:link {
+    text-decoration: none;
+}
+table, th , td  {
+    border: 9px solid white;
+    border-collapse: collapse;
+    padding: 5px;
+	
+}
+table tr:nth-child(odd)	{
+    background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+img, video{ max-width:100%; height:auto; }
+@media (max-width:360px){html{font-size:10px;}}
+@media (min-width:361px) and (max-width:399px){html{font-size:21px;}}
+@media (min-width:400px) and (max-width:439px){html{font-size:22px;}}
+@media (min-width:440px) and (max-width:479px){html{font-size:23px;}}
+@media (min-width:480px) and (max-width:519px){html{font-size:24px;}}
+@media (min-width:520px) and (max-width:559px){html{font-size:25px;}}
+@media (min-width:560px) and (max-width:599px){html{font-size:26px;}}
+@media (min-width:600px) and (max-width:639px){html{font-size:27px;}}
+@media (min-width:640px) and (max-width:679px){html{font-size:28px;}}
+@media (min-width:680px) and (max-width:719px){html{font-size:29px;}}
+@media (min-width:720px) and (max-width:759px){html{font-size:30px;}}
+@media (min-width:760px) and (max-width:799px){html{font-size:31px;}}
+@media (min-width:800px) and (max-width:839px){html{font-size:32px;}}
+@media (min-width:840px) and (max-width:879px){html{font-size:33px;}}
+@media (min-width:880px){html{font-size:34px;}}
+</style>
+</head>
+<body>
+
+<div id="id01"></div>
+<script>
+
+function myFunction(JSONarr) {
+    var out = "";
+    var i;
+    var out = "<table width=100% align=center >";
+
+    for(i = 0; i < JSONarr.length; i++) {
+        out += "<tr><td rowspan=2 width=20% align=center>" +
+        "<img src=icon_person.png width:contain height:contain>" +
+        "</td><td width=80% align=center nowrap> " +  JSONarr[i].officename + "</td></tr><tr><td align=center>" +
+		"<button class='myButton' type='button' style='height:60%; width:40%'>" + "<a href='tel:" + JSONarr[i].phone + "'> Call </a> " + "</button>" +
+		" " +
+        "<button class='myButton' type='button' style='height:60%; width:40%'>" + "<a href='mailto:" + JSONarr[i].email + "'> " + "email" + "</a> " + "</button>" +
+        "</td></tr>";
+    }
+    out += "</table>";
+    document.getElementById("id01").innerHTML = out;
+	}
+</script>
+<script src="Phonebook.js"></script>
+</body>
+</html>
